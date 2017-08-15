@@ -1,0 +1,13 @@
+Package: jrPresentation
+Type: Package
+Title: Jumping Rivers Slide Format
+Version: 0.1.0
+Authors@R: person(given="Colin", family="Gillespie",
+    email="colin@jumpingrivers.com", role = c("aut", "cre"))
+Maintainer: Colin Gillespie <colin@jumpingrivers.com>
+Description: CVI for Jumping Rivers.
+License: GPL-2 | GPL-3
+Encoding: UTF-8
+LazyData: true
+Suggests: knitr, xaringan
+RoxygenNote: 6.0.1

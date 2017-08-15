@@ -1,0 +1,40 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+editor_options: 
+  chunk_output_type: console
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# Jumping Rivers Presentation Style
+
+Style sheets for the [xaringan](https://github.com/yihui/xaringan) package
+
+## Installation
+
+```{r, eval=FALSE}
+devtools::install_github('yihui/xaringan') # not on CRAN
+devtools::install_github('jumpingrivers/jrPresentation')
+```
+
+You __may__ need to submit a PR to update the `get_author()` function.
+
+## Example
+
+You can create an example presentation in the directory `/tmp/example`
+
+```{r example, eval=FALSE}
+library("jrPresentation")
+create_example(path = "/tmp/example")
+```
+Just go to that directory and knit `index.Rmd`
