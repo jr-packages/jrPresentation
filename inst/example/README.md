@@ -1,0 +1,1 @@
+The assets description should only contain images from the package, not other presentation images.
