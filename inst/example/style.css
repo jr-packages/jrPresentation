@@ -194,3 +194,10 @@ div.jr-header-inverse  table {
 .remark-slide-number {
   color: #FFF;
 }
+
+/* Change colour of strong */
+strong {
+  color: #af505a;
+}
+
+
