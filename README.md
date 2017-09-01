@@ -9,7 +9,7 @@ Installation
 
 ``` r
 devtools::install_github('yihui/xaringan') # not on CRAN
-devtools::install_github('jumpingrivers/jrPresentation')
+devtools::install_github('jr-packages/jrPresentation')
 ```
 
 You **may** need to submit a PR to update the `get_author()` function.

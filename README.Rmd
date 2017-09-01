@@ -24,7 +24,7 @@ Style sheets for the [xaringan](https://github.com/yihui/xaringan) package
 
 ```{r, eval=FALSE}
 devtools::install_github('yihui/xaringan') # not on CRAN
-devtools::install_github('jumpingrivers/jrPresentation')
+devtools::install_github('jr-packages/jrPresentation')
 ```
 
 You __may__ need to submit a PR to update the `get_author()` function.
