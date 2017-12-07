@@ -1,9 +1,14 @@
 *_cache/
 *_figure/
+*_files/
 lecture.pdf
-lexture.tex
-chapter*_files
+lecture.tex
+
 chapter?.html
+
+main.pdf
+main.tex
+titlepage.tex
 
 ##############################
 ## Latex ignores from github
