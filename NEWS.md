@@ -1,3 +1,6 @@
+# Version 0.1.4
+  * Use CSS to remove slide number
+
 # Version 0.1.3
   * Update .gitignore
 
