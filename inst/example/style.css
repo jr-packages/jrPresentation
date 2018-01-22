@@ -200,4 +200,8 @@ strong {
   color: #af505a;
 }
 
+/* Remove slide number */
+.remark-slide-number {
+  display:none;
 
+}
