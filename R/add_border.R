@@ -32,9 +32,9 @@ add_header = function(inverse = FALSE){
 #' @export
 add_footer = function(inverse = FALSE){
   if(!inverse) {
-    html = '<div class="jr-footer"><span>&copy; 2017 Jumping Rivers (jumpingrivers.com)</span></div>'
+    html = '<div class="jr-footer"><span>&copy; 2018 Jumping Rivers (jumpingrivers.com)</span></div>'
   } else {
-    html = '<div class="jr-footer-inverse"><span>&copy; 2017 Jumping Rivers (jumpingrivers.com)</span></div>'
+    html = '<div class="jr-footer-inverse"><span>&copy; 2018 Jumping Rivers (jumpingrivers.com)</span></div>'
   }
   html
 }
