@@ -1,3 +1,7 @@
+# Version 0.1.5
+  * Update copyright year
+  * Add background_image option to border
+
 # Version 0.1.4
   * Use CSS to remove slide number
 
