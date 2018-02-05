@@ -1,6 +1,7 @@
 # Version 0.1.5
   * Update copyright year
   * Add background_image option to border
+  * New add_class function for setting inverse, middle, center options
 
 # Version 0.1.4
   * Use CSS to remove slide number
