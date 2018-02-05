@@ -15,8 +15,7 @@ add_footer(inverse = FALSE)
 \arguments{
 \item{inverse}{Default FALSE; should we use the inverse theme?}
 
-\item{background_image}{Default \code{FALSE}; should there be backgroud image. Currently
-only works for inverse=TRUE}
+\item{background_image}{Default \code{NULL}}
 }
 \description{
 Functions to add a header, footer or both.

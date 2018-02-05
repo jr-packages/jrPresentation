@@ -1,8 +1,7 @@
 #' @title Add Border to Slides
 #' @description Functions to add a header, footer or both.
 #' @param inverse Default FALSE; should we use the inverse theme?
-#' @param background_image Default \code{FALSE}; should there be backgroud image. Currently
-#' only works for inverse=TRUE
+#' @param background_image Default \code{NULL}
 #' @export
 add_border = function(inverse = FALSE, background_image = NULL) {
   txt = "layout: true"
