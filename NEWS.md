@@ -1,3 +1,6 @@
+# Version 0.1.6
+  * Add background_size option to add_border
+
 # Version 0.1.5
   * Update copyright year
   * Add background_image option to border

@@ -2,15 +2,24 @@
 #' @description Functions to add a header, footer or both.
 #' @param inverse Default FALSE; should we use the inverse theme?
 #' @param background_image Default \code{NULL}
+#' #' @param background_size Default \code{NULL}. Options include "cover"
 #' @export
-add_border = function(inverse = FALSE, background_image = NULL) {
+add_border = function(inverse = FALSE, background_image = NULL, background_size= NULL) {
   txt = "layout: true"
 
   if(!is.null(background_image)) {
     image = paste0("background-image: url(", background_image, ")")
     txt = paste(txt, image , sep = "\n")
   }
-  paste( txt, add_header(inverse), add_footer(inverse), sep = "\n")
+
+  if(!is.null(background_size)) {
+    size = paste0("background-size: ", background_size)
+    txt = paste(txt, size , sep = "\n")
+  }
+  if(!is.null(inverse)) {
+    txt = paste( txt, add_header(inverse), add_footer(inverse), sep = "\n")
+  }
+  txt
 }
 
 #' @rdname add_border
