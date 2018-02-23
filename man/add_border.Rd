@@ -16,8 +16,9 @@ add_footer(inverse = FALSE)
 \arguments{
 \item{inverse}{Default FALSE; should we use the inverse theme?}
 
-\item{background_image}{Default \code{NULL}
-#' @param background_size Default \code{NULL}. Options include "cover"}
+\item{background_image}{Default \code{NULL}}
+
+\item{background_size}{Default \code{NULL}. Options include "cover"}
 }
 \description{
 Functions to add a header, footer or both.
