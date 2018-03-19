@@ -2,7 +2,7 @@
 #' @description Functions to add a header, footer or both.
 #' @param inverse Default FALSE; should we use the inverse theme?
 #' @param background_image Default \code{NULL}
-#' #' @param background_size Default \code{NULL}. Options include "cover"
+#' @param background_size Default \code{NULL}. Options include "cover"
 #' @export
 add_border = function(inverse = FALSE, background_image = NULL, background_size= NULL) {
   txt = "layout: true"
