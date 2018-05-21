@@ -17,6 +17,9 @@ get_author = function (user = NULL) {
   else if (user == "User") {
     "Theo Roe ([\\\\@theoJRivers1](https://twitter.com/theoJRivers1))"
   }
+  else if (user == "rmn") {
+    "Roman Popat ([\\\\@rmnppt](https://twitter.com/rmnppt))"
+  }
   else {
     "Jumping Rivers ([\\\\@jumping_uk](https://twitter.com/jumping_uk))"
   }
