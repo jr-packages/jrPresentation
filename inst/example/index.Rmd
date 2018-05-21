@@ -14,14 +14,17 @@ editor_options:
   chunk_output_type: console
 ---
 
-```{r setup, include=FALSE, message=FALSE}
+```{r setup, message=FALSE, include = FALSE}
 options(htmltools.dir.version = FALSE)
 library("jrPresentation")
-set_presentation_options()
+# Now display page numbers and url to slides
+set_presentation_options(page_numbers = FALSE, 
+                         url = "www.jumpingrivers.com/link")
 ```
 
 layout: true
 `r add_border(inverse=FALSE)`
+
 ---
 
 # Jumping Rivers 

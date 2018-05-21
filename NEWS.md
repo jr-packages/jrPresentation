@@ -1,3 +1,7 @@
+# Version 0.1.7
+  * Add optional page numbers
+  * Add optional url link to sides
+
 # Version 0.1.6
   * Add background_size option to add_border
 

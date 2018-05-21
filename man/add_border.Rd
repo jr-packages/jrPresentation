@@ -4,6 +4,7 @@
 \alias{add_border}
 \alias{add_header}
 \alias{add_footer}
+\alias{add_page_number}
 \title{Add Border to Slides}
 \usage{
 add_border(inverse = FALSE, background_image = NULL,
@@ -12,6 +13,8 @@ add_border(inverse = FALSE, background_image = NULL,
 add_header(inverse = FALSE)
 
 add_footer(inverse = FALSE)
+
+add_page_number()
 }
 \arguments{
 \item{inverse}{Default FALSE; should we use the inverse theme?}

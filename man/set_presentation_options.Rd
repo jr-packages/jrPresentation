@@ -4,7 +4,12 @@
 \alias{set_presentation_options}
 \title{Set knitr Options}
 \usage{
-set_presentation_options()
+set_presentation_options(page_numbers = FALSE, url = "")
+}
+\arguments{
+\item{page_numbers}{Boolean Add page numbers to the slides}
+
+\item{url}{Character (default "") optional link to package}
 }
 \description{
 In the future, pass the options as arguments.

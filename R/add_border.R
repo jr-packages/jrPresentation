@@ -46,12 +46,22 @@ add_header = function(inverse = FALSE){
 #' @rdname add_border
 #' @export
 add_footer = function(inverse = FALSE){
+
+  url = paste0("<div>", zzz$url, "</div>")
   if(!inverse) {
-    html = '<div class="jr-footer"><span>&copy; 2018 Jumping Rivers (jumpingrivers.com)</span></div>'
+    html = paste0('<div class="jr-footer"><span>&copy; 2018 Jumping Rivers (jumpingrivers.com)</span>', url, '</div>')
   } else {
-    html = '<div class="jr-footer-inverse"><span>&copy; 2018 Jumping Rivers (jumpingrivers.com)</span></div>'
+    html = paste0('<div class="jr-footer-inverse"><span>&copy; 2018 Jumping Rivers (jumpingrivers.com)</span>', url, '</div>')
   }
   html
 }
 
-
+#' @rdname add_border
+#' @export
+add_page_number = function() {
+  "<div>
+    <style type='text/css' scoped>
+        .remark-slide-number {display:block;}
+    </style>
+  </div>"
+}
