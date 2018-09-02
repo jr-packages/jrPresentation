@@ -1,3 +1,6 @@
+# Version 0.1.8
+  * Create example slides in the same directory
+
 # Version 0.1.7
   * Add optional page numbers
   * Add optional url link to sides
