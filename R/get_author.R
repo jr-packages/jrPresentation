@@ -12,7 +12,7 @@ get_author = function (user = NULL) {
     "Colin Gillespie ([\\@csgillespie](https://twitter.com/csgillespie))"
   }
   else if (user == "jamie") {
-    "Jamie Owen ([\\\\@jamieRowen](https://twitter.com/jamieRowen))"
+    "Jamie Owen ([\\@jamieRowen](https://twitter.com/jamieRowen))"
   }
   else if (user == "User") {
     "Theo Roe ([\\\\@theoJRivers1](https://twitter.com/theoJRivers1))"
