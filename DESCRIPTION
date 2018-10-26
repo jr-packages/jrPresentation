@@ -1,7 +1,7 @@
 Package: jrPresentation
 Type: Package
 Title: Jumping Rivers Slide Format
-Version: 0.1.8
+Version: 0.1.9
 Authors@R: person(given="Colin", family="Gillespie",
     email="colin@jumpingrivers.com", role = c("aut", "cre"))
 Maintainer: Colin Gillespie <colin@jumpingrivers.com>
