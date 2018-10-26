@@ -1,5 +1,7 @@
 #' Create site yaml for connect
 #'
+#' Should only be used in a Makefile in slides directory
+#'
 #' @export
 create_site_yml = function(){
   chapters = list.files(pattern = "*.Rmd")

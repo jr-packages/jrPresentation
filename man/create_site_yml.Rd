@@ -7,5 +7,5 @@
 create_site_yml()
 }
 \description{
-Create site yaml for connect
+Should only be used in a Makefile in slides directory
 }
