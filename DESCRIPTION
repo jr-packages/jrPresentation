@@ -11,4 +11,4 @@ Encoding: UTF-8
 LazyData: true
 Imports: knitr (>= 1.20), xaringan (>= 0.6)
 Repository: jr
-RoxygenNote: 6.0.1
+RoxygenNote: 6.1.0
