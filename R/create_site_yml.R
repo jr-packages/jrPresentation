@@ -2,6 +2,7 @@
 #'
 #' Should only be used in a Makefile in slides directory
 #'
+#' @importFrom stringr str_to_title
 #' @export
 create_site_yml = function(){
   chapters = list.files(pattern = "*.Rmd")
