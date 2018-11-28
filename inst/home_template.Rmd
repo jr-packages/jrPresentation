@@ -1,11 +1,31 @@
 ---
 title: "Our clients"
+editor_options: 
+  chunk_output_type: console
 ---
 
+```{r echo = FALSE, results = "hide"}
+clients = c("shell", "sustrans", "yorkshire", "hastings", 
+            "Pragmatic", "nhs", "royal_statistical_society", 
+            "Francis_Crick_Institute", "Ministry_of_Defence", 
+            "University_of_Manchester")
+clients = glue::glue("example/assets/{clients}.png")
+
+clients = system.file(clients, package = "jrPresentation")
+
+dir.create("assets/", showWarnings = FALSE)
+fs::file_copy(clients, rep("assets", length(clients)))
+```
+
 <div id="clients">
-<img src="assets/shell.png"></img><img src="assets/sustrans.png"></img>
-<img src="assets/yorkshire.png"></img><img src="assets/hastings.png"></img>
-<img src="assets/Pragmatic.png"></img><img src="assets/nhs.png"></img>
-<img src="assets/royal_statistical_society.jpg"></img><img src="assets/Francis_Crick_Institute.png"></img>
-<img src="assets/Ministry_of_Defence.png"></img><img src="assets/University_of_Manchester.png"></img>
+<img src="assets/shell.png"></img>
+<img src="assets/sustrans.png"></img>
+<img src="assets/yorkshire.png"></img>
+<img src="assets/hastings.png"></img>
+<img src="assets/Pragmatic.png"></img>
+<img src="assets/nhs.png"></img>
+<img src="assets/royal_statistical_society.jpg"></img>
+<img src="assets/Francis_Crick_Institute.png"></img>
+<img src="assets/Ministry_of_Defence.png"></img>
+<img src="assets/University_of_Manchester.png"></img>
 </div>

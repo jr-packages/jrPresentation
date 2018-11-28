@@ -1,12 +1,31 @@
+connect_server = function() "connect.jumpingrivers.cloud"
+
+is_connect_set_up = function() {
+  server = rsconnect::accounts()$server
+  if(length(server) > 0 && (server %in% connect_server()))
+    return(TRUE)
+  else
+    return(FALSE)
+}
+
+#' Set up connect
+#'
+#' Set up connection to the
 #' @export
+set_up_connect = function() {
+  rsconnect::addConnectServer(paste0("https://", connect_server()),
+                              connect_server())
+  rsconnect::connectUser(server = connect_server())
+}
+
 deploy = function() {
   user = get_connect_user()
+  server = accounts()$server
   rsconnect::deploySite(siteDir = getwd(),
                         siteName = get_connect_name(),
-                        server = "connect.jumpingivers.cloud",
+                        server = connect_server(),
                         account = user,
                         render = "local")
-
 }
 
 #' @rdname create_site_yml
@@ -14,36 +33,34 @@ deploy = function() {
 #' @export
 #' @importFrom rsconnect deploySite
 upload_slides = function(clean = TRUE) {
-  if (clean) on.exit(clean_site())
-  get_connect_template()
-  create_site_yml()
-
-
-  result = try(deploy(), silent = TRUE)
-  if (class(result) == "try-error") {
-    rsconnect::connectUser(server = "connect.jumpingrivers.cloud")
-    message("\n\nUpload fail. Please rerun now that you have connected.")
+  if(!is_connect_set_up()) {
+    message("Need to link to connect.")
+    set_up_connect()
   }
 
+  if (clean) on.exit(clean_site())
+  create_connect_template()
+  create_site_yml()
+  result = try(deploy())
+  if (class(result) == "try-error") {
+    message("Upload failed")
+    return(FALSE)
+  }
+  message("Upload successful - user: ", get_connect_user())
+  return(TRUE)
 }
 
 #' @importFrom rsconnect accounts connectUser
-get_connect_user = function(attempt = 0L) {
-  accs = rsconnect::accounts()
-  names = accs[accs$server == "connect.jumpingrivers.cloud", "name"]
-  if (length(names) == 0L && attempt == 0L) {
-    rsconnect::connectUser(server = "connect.jumpingrivers.cloud")
-    get_connect_user(1)
-  } else if (attempt == 1L) {
-    stop("Can't determine connect username")
-  }
+get_connect_user = function() {
+  acc = rsconnect::accounts()
+  acc = acc[acc$server == connect_server(), ]
+  names = acc$name
+
   if (length(names) == 1L) return(names)
 
   names = names[names %in% c("colin", "jamie", "seb", "theo", "roman")]
   return(names)
 }
-
-
 
 #' Function to return slide name for connect
 #'
@@ -65,7 +82,7 @@ get_connect_name = function(){
 #' Should only be used in a Makefile in slides directory
 #'
 #' @export
-get_connect_template = function() {
+create_connect_template = function() {
   file = system.file("home_template.Rmd", package = "jrPresentation")
   # Index does not exist
   if (!file.exists("index.Rmd")) {
@@ -132,7 +149,7 @@ clean_site = function() {
   index = digest::digest(readLines("index.Rmd"))
   file = system.file("home_template.Rmd", package = "jrPresentation")
   home_temp = digest::digest(readLines(file))
-  # WhyR has only index.Rmd, so don't delete
+  # WhyR has only index.Rmd, so don't delete index.Rmd without thinking
   # Use a hash as a quick comparison
   if(index == home_temp) file.remove("index.Rmd")
 }
