@@ -37,7 +37,6 @@ upload_slides = function(clean = TRUE) {
   if (file.exists("slides")) {
     setwd("slides/"); on.exit(setwd("../"))
   }
-
   if(!is_connect_set_up()) {
     message("Need to link to connect.")
     set_up_connect()
