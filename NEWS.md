@@ -1,3 +1,6 @@
+# Version 0.1.13
+  * Adding connect functionality
+  
 # Version 0.1.8
   * Create example slides in the same directory
 

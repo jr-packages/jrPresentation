@@ -9,7 +9,7 @@ get_user = function (user = NULL) {
   if (is.null(user))
     user = Sys.info()["user"]
   if (user %in% c("ncsg3", "colin")) {
-    "u465"
+    "colin"
   }
   else if (user == "jamie") {
     "u450" # TODO update this once seb back with my user on rstudio connect
