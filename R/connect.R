@@ -1,19 +1,49 @@
-#' @rdname create_site_yml
-#' @param clean Should we clean up?
-#' @param user Connect user. Default \code{Sys.getenv("JR_CONNECT_USER")}
 #' @export
-#' @importFrom rsconnect deploySite
-upload_slides = function(clean = TRUE,
-                         user = Sys.getenv("JR_CONNECT_USER")) {
-  if(clean) on.exit(clean_site())
-  get_connect_template()
-  create_site_yml()
-  rsconnect::deploySite(getwd(),
-                        get_connect_name(),
-                        user,
+deploy = function() {
+  user = get_connect_user()
+  rsconnect::deploySite(siteDir = getwd(),
+                        siteName = get_connect_name(),
+                        server = "connect.jumpingivers.cloud",
+                        account = user,
                         render = "local")
 
 }
+
+#' @rdname create_site_yml
+#' @param clean Should we clean up?
+#' @export
+#' @importFrom rsconnect deploySite
+upload_slides = function(clean = TRUE) {
+  if (clean) on.exit(clean_site())
+  get_connect_template()
+  create_site_yml()
+
+
+  result = try(deploy(), silent = TRUE)
+  if (class(result) == "try-error") {
+    rsconnect::connectUser(server = "connect.jumpingrivers.cloud")
+    message("\n\nUpload fail. Please rerun now that you have connected.")
+  }
+
+}
+
+#' @importFrom rsconnect accounts connectUser
+get_connect_user = function(attempt = 0L) {
+  accs = rsconnect::accounts()
+  names = accs[accs$server == "connect.jumpingrivers.cloud", "name"]
+  if (length(names) == 0L && attempt == 0L) {
+    rsconnect::connectUser(server = "connect.jumpingrivers.cloud")
+    get_connect_user(1)
+  } else if (attempt == 1L) {
+    stop("Can't determine connect username")
+  }
+  if (length(names) == 1L) return(names)
+
+  names = names[names %in% c("colin", "jamie", "seb", "theo", "roman")]
+  return(names)
+}
+
+
 
 #' Function to return slide name for connect
 #'
@@ -38,7 +68,7 @@ get_connect_name = function(){
 get_connect_template = function() {
   file = system.file("home_template.Rmd", package = "jrPresentation")
   # Index does not exist
-  if(!file.exists("index.Rmd")) {
+  if (!file.exists("index.Rmd")) {
     file.copy(file, "index.Rmd")
     message("Updated index.Rmd")
     return(TRUE)
@@ -48,7 +78,7 @@ get_connect_template = function() {
   index = readLines("index.Rmd")
   home_temp = readLines(file)
 
-  if(index[[2]] == home_temp[[2]]) {
+  if (index[[2]] == home_temp[[2]]) {
     file.copy(file, "index.Rmd")
     message("Updated index.Rmd")
     return(TRUE)

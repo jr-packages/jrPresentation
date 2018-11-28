@@ -6,7 +6,7 @@
 \alias{clean_site}
 \title{Create site yaml for connect}
 \usage{
-upload_slides(clean = TRUE, user = Sys.getenv("JR_CONNECT_USER"))
+upload_slides(clean = TRUE)
 
 create_site_yml()
 
@@ -14,8 +14,6 @@ clean_site()
 }
 \arguments{
 \item{clean}{Should we clean up?}
-
-\item{user}{Connect user. Default \code{Sys.getenv("JR_CONNECT_USER")}}
 }
 \description{
 Should only be used in a Makefile in slides directory
