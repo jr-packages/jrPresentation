@@ -33,12 +33,16 @@ deploy = function() {
 #' @export
 #' @importFrom rsconnect deploySite
 upload_slides = function(clean = TRUE) {
+  if (clean) on.exit(clean_site(), add = TRUE)
+  if (file.exists("slides")) {
+    setwd("slides/"); on.exit(setwd("../"))
+  }
+
   if(!is_connect_set_up()) {
     message("Need to link to connect.")
     set_up_connect()
   }
 
-  if (clean) on.exit(clean_site())
   create_connect_template()
   create_site_yml()
   result = try(deploy())
@@ -67,7 +71,7 @@ get_connect_user = function() {
 #' Should only be used in a Makefile in slides directory
 #'
 #' @export
-get_connect_name = function(){
+get_connect_name = function() {
   git_config = file("../.git/config")
   on.exit(close(git_config))
   l = readLines(git_config)

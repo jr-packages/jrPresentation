@@ -14,7 +14,7 @@ clients = glue::glue("example/assets/{clients}.png")
 clients = system.file(clients, package = "jrPresentation")
 
 dir.create("assets/", showWarnings = FALSE)
-fs::file_copy(clients, rep("assets", length(clients)))
+fs::file_copy(clients, rep("assets", length(clients)), overwrite = TRUE)
 ```
 
 <div id="clients">
