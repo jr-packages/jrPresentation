@@ -9,7 +9,7 @@ Description: CVI for Jumping Rivers.
 License: GPL-2 | GPL-3
 Encoding: UTF-8
 LazyData: true
-Imports: knitr (>= 1.20), xaringan (>= 0.6), stringr,
-  rsconnect, digest, rmarkdown
+Imports: knitr (>= 1.20), xaringan (>= 0.8), stringr,
+  rsconnect (>= 0.8.11), digest, rmarkdown (>= 1.10)
 Repository: jr
 RoxygenNote: 6.1.1
