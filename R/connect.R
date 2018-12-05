@@ -147,13 +147,18 @@ navbar:
 #' @importFrom rmarkdown clean_site
 #' @export
 clean_site = function() {
-  rmarkdown::clean_site(getwd())
-  file.remove("_site.yml")
-  index = digest::digest(readLines("index.Rmd"))
-  file = system.file("home_template.Rmd", package = "jrPresentation")
-  home_temp = digest::digest(readLines(file))
-  # WhyR has only index.Rmd, so don't delete index.Rmd without thinking
-  # Use a hash as a quick comparison
-  if(index == home_temp) file.remove("index.Rmd")
+  try(rmarkdown::clean_site(getwd()), silent = TRUE)
+  if(file.exists("_site.yml")) file.remove("_site.yml")
+  if(file.exists("index.Rmd")) {
+
+    index = digest::digest(readLines("index.Rmd"))
+    file = system.file("home_template.Rmd", package = "jrPresentation")
+    home_temp = digest::digest(readLines(file))
+    # WhyR has only index.Rmd, so don't delete index.Rmd without thinking
+    # Use a hash as a quick comparison
+    if(index == home_temp) {
+      file.remove("index.Rmd")
+    }
+  }
 }
 
