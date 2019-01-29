@@ -46,12 +46,12 @@ add_header = function(inverse = FALSE){
 #' @rdname add_border
 #' @export
 add_footer = function(inverse = FALSE){
-
+  year = strsplit(as.character(Sys.Date()), split = "-")[[1]][1]
   url = paste0("<div>", zzz$url, "</div>")
-  if(!inverse) {
-    html = paste0('<div class="jr-footer"><span>&copy; 2018 Jumping Rivers (jumpingrivers.com)</span>', url, '</div>')
+  if (!inverse) {
+    html = paste0('<div class="jr-footer"><span>&copy; ', year, ' Jumping Rivers (jumpingrivers.com)</span>', url, '</div>')
   } else {
-    html = paste0('<div class="jr-footer-inverse"><span>&copy; 2018 Jumping Rivers (jumpingrivers.com)</span>', url, '</div>')
+    html = paste0('<div class="jr-footer-inverse"><span>&copy; ', year, ' Jumping Rivers (jumpingrivers.com)</span>', url, '</div>')
   }
   html
 }

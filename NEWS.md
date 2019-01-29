@@ -1,3 +1,6 @@
+# Version 0.1.14
+  * Copyright year now dynamic
+
 # Version 0.1.13
   * Adding connect functionality
   
