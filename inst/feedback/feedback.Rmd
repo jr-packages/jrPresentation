@@ -1,0 +1,40 @@
+---
+title: "Feedback"
+#subtitle: "A subtitle"
+author: '`r jrPresentation::get_author()`'
+output:
+  xaringan::moon_reader:
+    css: ["default", "style.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE, message=FALSE}
+options(htmltools.dir.version = FALSE)
+library("jrPresentation")
+set_presentation_options()
+knitr::opts_chunk$set(cache=FALSE)
+```
+
+layout: true
+`r add_border(inverse=FALSE)`
+---
+
+# Feedback
+
+If you don't mind, we would love some feedback
+
+```{r, echo=FALSE}
+# XXX TODO have a default
+questionnaire = NA
+if (fs::file_exists("config.yml")){
+  questionnaire = config::get('questionnaire')
+}
+```
+
+> `r questionnaire`
