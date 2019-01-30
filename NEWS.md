@@ -1,5 +1,6 @@
 # Version 0.1.14
   * Copyright year now dynamic
+  * Hide warnings from clean_up site
 
 # Version 0.1.13
   * Adding connect functionality
