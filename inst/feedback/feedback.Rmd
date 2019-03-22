@@ -32,8 +32,8 @@ If you don't mind, we would love some feedback
 ```{r, echo=FALSE}
 # XXX TODO have a default
 questionnaire = NA
-if (fs::file_exists("../feedback_link.txt")){
-  questionnaire = scan('../feedback_link.txt',what = character())
+if (fs::file_exists("feedback_link.txt")){
+  questionnaire = scan('feedback_link.txt',what = character())
 }
 ```
 
