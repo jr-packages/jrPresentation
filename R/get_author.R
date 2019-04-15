@@ -15,12 +15,15 @@ get_author = function (user = NULL) {
     "Jamie Owen ([\\@jamieRowen](https://twitter.com/jamieRowen))"
   }
   else if (user == "User") {
-    "Theo Roe ([\\\\@theoJRivers1](https://twitter.com/theoJRivers1))"
+    "Theo Roe ([\\@theoJRivers1](https://twitter.com/theoJRivers1))"
   }
   else if (user == "rmn") {
-    "Roman Popat ([\\\\@rmnppt](https://twitter.com/rmnppt))"
+    "Roman Popat ([\\@rmnppt](https://twitter.com/rmnppt))"
+  }
+  else if (user == "rhian") {
+    "Rhian Davies ([\\@trianglegirl](https://twitter.com/trianglegirl))"
   }
   else {
-    "Jumping Rivers ([\\\\@jumping_uk](https://twitter.com/jumping_uk))"
+    "Jumping Rivers ([\\@jumping_uk](https://twitter.com/jumping_uk))"
   }
 }
