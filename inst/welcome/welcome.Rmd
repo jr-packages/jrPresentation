@@ -94,11 +94,20 @@ layout: true
 # Our clients
 
 <div id="clients">
-<img src="assets/shell.png"></img><img src="assets/sustrans.png"></img>
-<img src="assets/yorkshire.png"></img><img src="assets/hastings.png"></img>
-<img src="assets/Pragmatic.png"></img><img src="assets/nhs.png"></img>
-<img src="assets/royal_statistical_society.jpg"></img><img src="assets/Francis_Crick_Institute.png"></img>
-<img src="assets/Ministry_of_Defence.png"></img><img src="assets/University_of_Manchester.png"></img>
+<img src="assets/yorkshire.png"></img>
+<img src="assets/hastings.png"></img>
+<img src="assets/actuaries.jpg"></img>
+<img src="assets/Ministry_of_Defence.png"></img>
+
+<img src="assets/sustrans.png"></img>
+<img src="assets/shell.png"></img>
+<img src="assets/Pragmatic.png"></img>
+<img src="assets/agr.jpg"></img>
+
+<img src="assets/Francis_Crick_Institute.png"></img>
+<img src="assets/royal_statistical_society.jpg"></img>
+<img src="assets/University_of_Manchester.png"></img>
+<img src="assets/nhs.png"></img>
 </div>
 
 ---
