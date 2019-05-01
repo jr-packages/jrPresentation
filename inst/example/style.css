@@ -95,7 +95,7 @@ tr:nth-child(even) { background: #eee }
 #clients img {
         width: 150px;
         border: none;
-        margin: 0;
+        margin-left: 25px;
 }
 
 img {
