@@ -7,7 +7,7 @@
 #' @importFrom lintr lint
 #' @export
 lint_slides = function(fnames = NULL) {
-  if (isFALSE(config::get("lintr"))) {
+  if (file.exists("config.yml") && isFALSE(config::get("lintr"))) {
     return(invisible(NULL))
   }
   if (is.null(fnames)) {
