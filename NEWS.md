@@ -1,3 +1,6 @@
+# Version 0.1.18
+  * Add lint_slides
+
 # Version 0.1.14
   * Copyright year now dynamic
   * Hide warnings from clean_up site
