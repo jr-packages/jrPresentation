@@ -1,7 +1,7 @@
 Package: jrPresentation
 Type: Package
 Title: Jumping Rivers Slide Format
-Version: 0.1.18
+Version: 0.1.19
 Authors@R: person(given="Jumping", family="Rivers",
     email="info@jumpingrivers.com", role = c("aut", "cre"))
 Description: CVI for Jumping Rivers.

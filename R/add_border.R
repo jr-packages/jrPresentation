@@ -7,17 +7,17 @@
 add_border = function(inverse = FALSE, background_image = NULL, background_size= NULL) {
   txt = "layout: true"
 
-  if(!is.null(background_image)) {
+  if (!is.null(background_image)) {
     image = paste0("background-image: url(", background_image, ")")
     txt = paste(txt, image , sep = "\n")
   }
 
-  if(!is.null(background_size)) {
+  if (!is.null(background_size)) {
     size = paste0("background-size: ", background_size)
     txt = paste(txt, size , sep = "\n")
   }
-  if(!is.null(inverse)) {
-    txt = paste( txt, add_header(inverse), add_footer(inverse), sep = "\n")
+  if (!is.null(inverse)) {
+    txt = paste(txt, add_header(inverse), add_footer(inverse), sep = "\n")
   }
   txt
 }

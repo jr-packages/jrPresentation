@@ -1,3 +1,6 @@
+# Version 0.1.19
+  * Build slides via a function so we can skip shiny slides
+
 # Version 0.1.18
   * Add lint_slides
 
