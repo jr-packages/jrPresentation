@@ -1,14 +1,28 @@
-Package: jrPresentation
 Type: Package
+Package: jrPresentation
 Title: Jumping Rivers Slide Format
 Version: 0.1.19
-Authors@R: person(given="Jumping", family="Rivers",
-    email="info@jumpingrivers.com", role = c("aut", "cre"))
+Authors@R: 
+    person(given = "Jumping",
+           family = "Rivers",
+           role = c("aut", "cre"),
+           email = "info@jumpingrivers.com")
 Description: CVI for Jumping Rivers.
 License: GPL-2 | GPL-3
+Imports: 
+    config,
+    digest,
+    fs,
+    knitr (>= 1.20),
+    lintr,
+    rmarkdown (>= 1.10),
+    rsconnect (>= 0.8.11),
+    stringr,
+    xaringan (>= 0.8)
+Suggests: 
+    countdown
+Remotes: 
+    gadenbuie/countdown
 Encoding: UTF-8
 LazyData: true
-Imports: knitr (>= 1.20), xaringan (>= 0.8), stringr,
-  rsconnect (>= 0.8.11), digest, rmarkdown (>= 1.10),
-  config, fs, lintr
 RoxygenNote: 6.1.1
