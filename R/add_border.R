@@ -4,17 +4,19 @@
 #' @param background_image Default \code{NULL}
 #' @param background_size Default \code{NULL}. Options include "cover"
 #' @export
-add_border = function(inverse = FALSE, background_image = NULL, background_size= NULL) {
+add_border = function(inverse = FALSE,
+                      background_image = NULL,
+                      background_size= NULL) {
   txt = "layout: true"
 
   if (!is.null(background_image)) {
     image = paste0("background-image: url(", background_image, ")")
-    txt = paste(txt, image , sep = "\n")
+    txt = paste(txt, image, sep = "\n")
   }
 
   if (!is.null(background_size)) {
     size = paste0("background-size: ", background_size)
-    txt = paste(txt, size , sep = "\n")
+    txt = paste(txt, size, sep = "\n")
   }
   if (!is.null(inverse)) {
     txt = paste(txt, add_header(inverse), add_footer(inverse), sep = "\n")
@@ -24,8 +26,9 @@ add_border = function(inverse = FALSE, background_image = NULL, background_size=
 
 #' @rdname add_border
 #' @export
-add_header = function(inverse = FALSE){
-  if(!inverse) {
+add_header = function(inverse = FALSE) {
+  # nolint start
+  if (!inverse) {
     html = '
       <div class="jr-header">
         <img class="logo" src="assets/white_logo_full.png"/>
@@ -41,11 +44,13 @@ add_header = function(inverse = FALSE){
       '
   }
   html
+  # nolint end
 }
 
 #' @rdname add_border
 #' @export
-add_footer = function(inverse = FALSE){
+add_footer = function(inverse = FALSE) {
+  # nolint start
   year = strsplit(as.character(Sys.Date()), split = "-")[[1]][1]
   url = paste0("<div>", zzz$url, "</div>")
   if (!inverse) {
@@ -54,6 +59,7 @@ add_footer = function(inverse = FALSE){
     html = paste0('<div class="jr-footer-inverse"><span>&copy; ', year, ' Jumping Rivers (jumpingrivers.com)</span>', url, '</div>')
   }
   html
+  # nolint end
 }
 
 #' @rdname add_border

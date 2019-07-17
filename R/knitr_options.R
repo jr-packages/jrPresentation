@@ -16,7 +16,7 @@ set_presentation_options = function(page_numbers = FALSE, url = "") {
     out.width = "70%",
     fig.width = 6,
     fig.asp = 0.618,  # 1 / phi,
-    dev="svg"
+    dev = "svg"
   )
   set.seed(2016)
   options(dplyr.print_min = 4,
@@ -27,13 +27,13 @@ set_presentation_options = function(page_numbers = FALSE, url = "") {
   fname = file.path(welcome_dir, "style.css")
   css = paste(readLines(fname), collapse = "\n")
 
-  if(page_numbers && nchar(url) > 0) {
+  if (page_numbers && nchar(url) > 0) {
     message("Can't display both page numbers and url - pick one greedy.")
     message("Just displaying page numbers")
     url = ""
   }
 
-  if(!page_numbers) {
+  if (!page_numbers) {
     css = paste(css, ".remark-slide-number {display:none;}", sep = "\n")
   }
   con = file("style.css", "w"); on.exit(close(con))
@@ -43,5 +43,3 @@ set_presentation_options = function(page_numbers = FALSE, url = "") {
   invisible(NULL)
 
 }
-
-

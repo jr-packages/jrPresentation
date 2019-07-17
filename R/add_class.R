@@ -1,5 +1,5 @@
 #' Add class tags to the slides
-#' 
+#'
 #' @param inverse Default \code{FALSE}
 #' @param center Default \code{FALSE}
 #' @param middle Default \code{FALSE}
@@ -10,4 +10,3 @@ add_class = function(inverse = FALSE, center = FALSE, middle = FALSE) {
   selected = paste(opts[c(inverse, center, middle)], collapse = ", ")
   paste(txt, selected)
 }
-

@@ -14,4 +14,3 @@ build_slide = function(fname) {
   }
   rmarkdown::render(fname)
 }
-

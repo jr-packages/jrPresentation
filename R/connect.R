@@ -2,7 +2,7 @@ connect_server = function() "connect.jumpingrivers.cloud"
 
 is_connect_set_up = function() {
   server = rsconnect::accounts()$server
-  if(length(server) > 0 && (server %in% connect_server()))
+  if (length(server) > 0 && (server %in% connect_server()))
     return(TRUE)
   else
     return(FALSE)
@@ -20,7 +20,6 @@ set_up_connect = function() {
 
 deploy = function() {
   user = get_connect_user()
-  server = accounts()$server
   rsconnect::deploySite(siteDir = getwd(),
                         siteName = get_connect_name(),
                         server = connect_server(),
@@ -37,7 +36,7 @@ upload_slides = function(clean = TRUE) {
   if (file.exists("slides")) {
     setwd("slides/"); on.exit(setwd("../"))
   }
-  if(!is_connect_set_up()) {
+  if (!is_connect_set_up()) {
     message("Need to link to connect.")
     set_up_connect()
   }
@@ -76,7 +75,7 @@ get_connect_name = function() {
   l = readLines(git_config)
   git_url = l[grep(pattern = "\turl", l) ]
   pkg = stringr::str_match(git_url, "course_notes/(.*)/(.*)_notes.git")
-  pkg = pkg[,length(pkg)]
+  pkg = pkg[, length(pkg)]
   pkg
 }
 
@@ -116,28 +115,29 @@ create_connect_template = function() {
 create_site_yml = function() {
   chapters = list.files(pattern = "chapter(.*)\\.Rmd$")
   chapters = chapters[grepl("chapter", chapters)]
-  html = gsub("Rmd", "html",chapters)
+  html = gsub("Rmd", "html", chapters)
   labels = gsub(".Rmd", "", chapters)
   labels = gsub("([a-z])([0-9])", "\\1 \\2", labels)
   labels = stringr::str_to_title(labels)
 
   # Try to get title
-  if(file.exists("chapter1.Rmd")) {
+  if (file.exists("chapter1.Rmd")) {
     chapter1 = readLines("chapter1.Rmd")[[2]]
-    title = stringr::str_match(chapter1, 'title: "(.*)"')[1,2]
-  } else if(file.exists("index.Rmd")) {
+    title = stringr::str_match(chapter1, 'title: "(.*)"')[1, 2]
+  } else if (file.exists("index.Rmd")) {
     index = readLines("index.Rmd")[[2]]
-    title = stringr::str_match(index, 'title: "(.*)"')[1,2]
+    title = stringr::str_match(index, 'title: "(.*)"')[1, 2]
   } else {
     title = "R Course"
   }
-  content = paste0("    - text: \"",labels,"\"\n      href: ",html, collapse = "\n")
+  content = paste0("    - text: \"", labels, "\"\n      href: ", html,
+                   collapse = "\n")
   site = paste0(
     'name: "Slides"
 navbar:
   title: "', title, '"
   left:
-',content
+', content
   )
   cat(site, file = "_site.yml")
 }
@@ -147,18 +147,17 @@ navbar:
 #' @importFrom rmarkdown clean_site
 #' @export
 clean_site = function() {
-  try(rmarkdown::clean_site(getwd()), silent = TRUE)
-  if(file.exists("_site.yml")) file.remove("_site.yml")
-  if(file.exists("index.Rmd")) {
+  try (rmarkdown::clean_site(getwd()), silent = TRUE)
+  if (file.exists("_site.yml")) file.remove("_site.yml")
+  if (file.exists("index.Rmd")) {
 
     index = digest::digest(readLines("index.Rmd"))
     file = system.file("home_template.Rmd", package = "jrPresentation")
     home_temp = digest::digest(readLines(file))
     # WhyR has only index.Rmd, so don't delete index.Rmd without thinking
     # Use a hash as a quick comparison
-    if(index == home_temp) {
+    if (index == home_temp) {
       file.remove("index.Rmd")
     }
   }
 }
-
