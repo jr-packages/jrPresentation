@@ -74,7 +74,8 @@ get_connect_name = function() {
   on.exit(close(git_config))
   l = readLines(git_config)
   git_url = l[grep(pattern = "\turl", l) ]
-  pkg = stringr::str_match(git_url, "course_notes/(.*)/(.*)_notes.git")
+  pkg = stringr::str_match(git_url,
+                           "(jumpingrivers-notes|course_notes)/(.*)/(.*)_notes")
   pkg = pkg[, length(pkg)]
   pkg
 }
