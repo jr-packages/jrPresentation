@@ -12,5 +12,14 @@ build_slide = function(fname) {
     message("Can't build Shiny slides")
     return(invisible(NULL))
   }
-  rmarkdown::render(fname)
+
+  # This is a bit hacky
+  # Need to render in the global environment, as S4 classes weren't able to be created
+  # However, want to maintain indpendence of chapters
+  # Not sure if this will work if run in parallel
+  old_vars = ls(envir = globalenv())
+  rmarkdown::render(fname, envir = globalenv())
+  new_vars = ls(envir = globalenv())
+  new_vars = new_vars[!(new_vars %in% old_vars)]
+  rm(list = new_vars, envir = globalenv())
 }
