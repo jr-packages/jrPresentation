@@ -7,5 +7,6 @@
 create_feedback()
 }
 \description{
-Copies the feedback slide template to the current WD. This feedback slide will look for the config questionnaire item
+Copies the feedback slide template to the current WD. This feedback
+slide will look for the config questionnaire item
 }

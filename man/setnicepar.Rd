@@ -5,7 +5,7 @@
 \title{Set a nice par}
 \usage{
 setnicepar(mar = c(3, 3, 2, 1), mgp = c(2, 0.4, 0), tck = -0.01,
-  cex.axis = 0.9, las = 1, mfrow = c(1, 1), ...)
+  cex_axis = 0.9, las = 1, mfrow = c(1, 1), ...)
 }
 \arguments{
 \item{mar}{See \code{?par}}
@@ -14,7 +14,7 @@ setnicepar(mar = c(3, 3, 2, 1), mgp = c(2, 0.4, 0), tck = -0.01,
 
 \item{tck}{See \code{?par}}
 
-\item{cex.axis}{See \code{?par}}
+\item{cex_axis}{See \code{?par}}
 
 \item{las}{See \code{?par}}
 

@@ -1,3 +1,6 @@
+# Dev
+  * Create symlink to graphics path
+
 # Version 0.1.20
   * Add countdown suggests
   * Add code lint

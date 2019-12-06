@@ -1,7 +1,7 @@
 Type: Package
 Package: jrPresentation
 Title: Jumping Rivers Slide Format
-Version: 0.1.20.0002
+Version: 0.1.20.0003
 Authors@R: 
     person(given = "Jumping",
            family = "Rivers",
@@ -10,10 +10,13 @@ Authors@R:
 Description: CVI for Jumping Rivers.
 License: GPL-2 | GPL-3
 Imports: 
+    clisymbols,
     config,
     countdown,
+    crayon,
     digest,
     fs,
+    glue,
     knitr (>= 1.20),
     lintr,
     rmarkdown (>= 1.10),
