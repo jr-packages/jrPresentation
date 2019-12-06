@@ -1,5 +1,6 @@
 # Dev
   * Create symlink to graphics path
+  * Check that titles in notes and slides match
 
 # Version 0.1.20
   * Add countdown suggests
