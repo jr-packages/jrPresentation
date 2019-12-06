@@ -5,7 +5,7 @@
 #' @examples
 #' get_author(user = "ncsg3")
 #' @export
-get_author = function (user = NULL) {
+get_author = function(user = NULL) {
   if (is.null(user))
     user = Sys.info()["user"]
   if (user %in% c("ncsg3", "colin")) {

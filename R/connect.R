@@ -73,7 +73,7 @@ get_connect_name = function() {
   git_config = file("../.git/config")
   on.exit(close(git_config))
   l = readLines(git_config)
-  git_url = l[grep(pattern = "\turl", l) ]
+  git_url = l[grep(pattern = "\turl", l)]
   pkg = stringr::str_match(git_url,
                            "(jumpingrivers-notes|course_notes)/(.*)/(.*)_notes")
   pkg = pkg[, length(pkg)]
@@ -148,7 +148,7 @@ navbar:
 #' @importFrom rmarkdown clean_site
 #' @export
 clean_site = function() {
-  try (rmarkdown::clean_site(getwd()), silent = TRUE)
+  try(rmarkdown::clean_site(getwd()), silent = TRUE)
   if (file.exists("_site.yml")) file.remove("_site.yml")
   if (file.exists("index.Rmd")) {
 

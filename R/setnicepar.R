@@ -16,11 +16,11 @@
 #' @export
 setnicepar = function(mar=c(3, 3, 2, 1),
                       mgp=c(2, 0.4, 0), tck = -.01,
-                      cex.axis = 0.9, las = 1, mfrow = c(1, 1), ...) {
+                      cex_axis = 0.9, las = 1, mfrow = c(1, 1), ...) {
   par(mar = mar,
       mgp = mgp,
       tck = tck,
-      cex.axis = cex.axis,
+      cex_axis = cex.axis,
       las = las,
       mfrow = mfrow, ...)
 }
