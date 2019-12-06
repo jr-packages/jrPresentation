@@ -4,7 +4,7 @@
 #' @param mar See \code{?par}
 #' @param mgp See \code{?par}
 #' @param tck See \code{?par}
-#' @param cex.axis See \code{?par}
+#' @param cex_axis See \code{?par}
 #' @param las See \code{?par}
 #' @param mfrow See \code{?par}
 #' @param ... Additional arguments passed to \code{par}
@@ -20,7 +20,7 @@ setnicepar = function(mar=c(3, 3, 2, 1),
   par(mar = mar,
       mgp = mgp,
       tck = tck,
-      cex_axis = cex.axis,
+      cex_axis = cex_axis,
       las = las,
       mfrow = mfrow, ...)
 }
