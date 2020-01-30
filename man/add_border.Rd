@@ -7,8 +7,7 @@
 \alias{add_page_number}
 \title{Add Border to Slides}
 \usage{
-add_border(inverse = FALSE, background_image = NULL,
-  background_size = NULL)
+add_border(inverse = FALSE, background_image = NULL, background_size = NULL)
 
 add_header(inverse = FALSE)
 
