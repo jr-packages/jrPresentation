@@ -20,7 +20,7 @@ setnicepar = function(mar=c(3, 3, 2, 1),
   par(mar = mar,
       mgp = mgp,
       tck = tck,
-      cex_axis = cex_axis,
+      cex.axis = cex_axis,
       las = las,
       mfrow = mfrow, ...)
 }
