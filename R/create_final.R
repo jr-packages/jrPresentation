@@ -5,7 +5,7 @@
 create_final = function() {
   check_slides_title()
   check_graphics_paths()
-  check_lint()
+  check_code_style()
   msg_info("Remember to use 'make connect' to create a back-up")
 
   return(invisible(NULL))

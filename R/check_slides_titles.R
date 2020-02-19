@@ -35,7 +35,6 @@ check_slides_title = function() {
     if (notes_title != slide_title) {
       if (!has_error) msg_error("Slides / notes title differ")
       msg_error(glue::glue("{fname}: {slide_title} vs {notes_title}"), indent = 2)
-      message(red(msg))
       has_error = TRUE
     }
   }
@@ -47,9 +46,9 @@ check_slides_title = function() {
     slide_subtitle = slide_subtitle[str_detect(slide_subtitle, "^subtitle:")]
     slide_subtitle = str_match(slide_subtitle, ":(.*)")[, 2]
     slide_subtitle = clean_string(slide_subtitle)
-    if (slide_subtitle != paste("Chapter", i)) {
-      msg = glue::glue("  {cross}{fname} the subtitle should be Chapter {i}")
-      message(red(msg))
+    if (length(slide_subtitle) == 0 || slide_subtitle != paste("Chapter", i)) {
+      msg = glue::glue("{fname} the subtitle should be Chapter {i}")
+      msg_error(msg, indent = 2)
       has_error = TRUE
     }
   }

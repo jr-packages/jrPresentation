@@ -1,7 +1,7 @@
 Type: Package
 Package: jrPresentation
 Title: Jumping Rivers Slide Format
-Version: 0.1.20.9011
+Version: 0.1.20.9012
 Authors@R: 
     person(given = "Jumping",
            family = "Rivers",
@@ -19,11 +19,13 @@ Imports:
     glue,
     knitr (>= 1.20),
     lintr,
+    reticulate,
     rmarkdown (>= 1.10),
     rsconnect (>= 0.8.11),
     stringr,
     xaringan (>= 0.8)
 Suggests:
+    jrNotes,
     testthat
 Remotes: 
     gadenbuie/countdown

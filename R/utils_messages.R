@@ -12,7 +12,7 @@ green = crayon::green
 msg_error = function(msg, indent = 0, stop = FALSE) {
   indent = ifelse(indent == 0, "", rep(" ", indent))
   if (isFALSE(stop)) {
-    message()
+    message(glue::glue_col("{indent}{red}{cross} {msg}"))
   } else {
     stop(glue::glue_col("{indent}{red}{cross} {msg}"), call. = FALSE)
   }
