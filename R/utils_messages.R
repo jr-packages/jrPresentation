@@ -30,5 +30,5 @@ msg_ok = function(msg, indent = 0) {
 
 msg_info = function(msg, indent = 0) {
   indent = ifelse(indent == 0, "", rep(" ", indent))
-  message(glue::glue_col("{indent}{yellow}{info} {msg}"))
+  message(glue::glue_col("{indent}{blue}{info} {msg}"))
 }
