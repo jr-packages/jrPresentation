@@ -7,16 +7,16 @@ clean_string = function(string) {
 }
 
 check_slides_title = function() {
-  msg_info("Checking slides title...check_slides_titles()")
+  msg_start("Checking slides title...check_slides_titles()")
   has_error = FALSE
   notes_chapters = sort(list.files(path = "../notes/", pattern = "^chapter?.\\.Rmd$"))
   slides_chapters = sort(list.files(path = ".", pattern = "^chapter?.\\.Rmd$"))
 
   if (length(slides_chapters) != length(notes_chapters)) {
-    stop("Different numbers of chapters in notes/ and slides/", call. = FALSE)
+    msg_error("Different numbers of chapters in notes/ and slides/", stop = TRUE)
   }
   if (!all(slides_chapters %in% notes_chapters)) {
-    stop("Different chapters in notes/ and slides/", call. = FALSE)
+    msg_error("Different chapters in notes/ and slides/", stop = TRUE)
   }
 
   chapter = slides_chapters[5]
@@ -33,8 +33,8 @@ check_slides_title = function() {
     notes_title = str_replace(notes_title, pattern = "\\{.*\\}", "") # remove labels
     notes_title = clean_string(notes_title)
     if (notes_title != slide_title) {
-      if (!has_error) message(red("Slides / notes title differ"))
-      msg = glue::glue("  {cross} {fname}: {slide_title} vs {notes_title}")
+      if (!has_error) msg_error("Slides / notes title differ")
+      msg_error(glue::glue("{fname}: {slide_title} vs {notes_title}"), indent = 2)
       message(red(msg))
       has_error = TRUE
     }

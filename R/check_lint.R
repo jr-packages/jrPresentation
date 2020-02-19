@@ -5,7 +5,7 @@ check_lint = function(fnames = NULL) {
   if (is.null(fnames)) {
     fnames = sort(list.files(pattern = "^c.*Rmd$"))
   }
-  msg_info("Check lint...check_lint()")
+  msg_start("Check lint...check_lint()")
   for (fname in fnames) {
     msg_start(paste0("Checking ", fname), indent = 2)
   }
