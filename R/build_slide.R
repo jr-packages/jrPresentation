@@ -1,9 +1,4 @@
 globalVariables("lines")
-#' @importFrom crayon red blue green yellow
-cross = clisymbols::symbol$cross
-tick = clisymbols::symbol$tick
-bullet = clisymbols::symbol$bullet
-
 #' Convert RMD to HTML
 #'
 #' If the slides are not runtime shiny, the filename is passed to
@@ -13,10 +8,6 @@ bullet = clisymbols::symbol$bullet
 #' @param fname Filename
 #' @export
 build_slide = function(fname) {
-  check_slides_title()
-  check_graphics_paths()
-
-
   yaml = rmarkdown::yaml_front_matter(fname)
   if (!is.null(yaml$runtime)) {
     message("Can't build Shiny slides")

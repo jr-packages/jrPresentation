@@ -1,7 +1,7 @@
 
 check_graphics_paths = function() {
-  msg = glue::glue("{bullet} Checking graphics path...check_graphics_paths()")
-  message(yellow(msg))
+  msg_start("Checking graphics path...check_graphics_paths()")
+
   if (!fs::file_exists("graphics")) {
     fs::link_create("../graphics", "graphics", symbolic = TRUE)
   }
@@ -13,14 +13,14 @@ check_graphics_paths = function() {
     detect = stringr::str_detect(out, "../graphics/")
     if (sum(detect) > 0L) {
       lines = paste(which(detect), collapse = ", ")
-      if (!has_error) message(red("Change '../graphics/ to graphics in paths. See lines: "))
-      msg = glue::glue_col("  {cross} {lines} in file {fname}")
-      message(red(msg))
+      if (!has_error) msg_error("Change '../graphics/ to graphics in paths. See lines: ")
+      msg = glue::glue("{lines} in file {fname}")
+      msg_error(msg, indent = 2)
       has_error = TRUE
     }
   }
   if (has_error) stop(call. = FALSE)
-  msg = glue::glue("{tick} Graphics paths look good!")
-  message(yellow(msg))
+  msg_ok("Graphics paths look good!")
+
   return(invisible(NULL))
 }

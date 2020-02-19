@@ -7,9 +7,7 @@ clean_string = function(string) {
 }
 
 check_slides_title = function() {
-  msg = glue::glue("{bullet} Checking slides title...check_slides_titles()")
-  message(yellow(msg))
-
+  msg_info("Checking slides title...check_slides_titles()")
   has_error = FALSE
   notes_chapters = sort(list.files(path = "../notes/", pattern = "^chapter?.\\.Rmd$"))
   slides_chapters = sort(list.files(path = ".", pattern = "^chapter?.\\.Rmd$"))
@@ -53,12 +51,9 @@ check_slides_title = function() {
       msg = glue::glue("  {cross}{fname} the subtitle should be Chapter {i}")
       message(red(msg))
       has_error = TRUE
-
     }
   }
   if (has_error) stop(call. = FALSE)
-
-  msg = glue::glue("{tick} Titles look good!")
-  message(yellow(msg))
+  msg_ok("Titles look good!")
   return(invisible(NULL))
 }

@@ -14,8 +14,8 @@
 #' plot(1:10)
 #' @importFrom graphics par
 #' @export
-setnicepar = function(mar=c(3, 3, 2, 1),
-                      mgp=c(2, 0.4, 0), tck = -.01,
+setnicepar = function(mar = c(3, 3, 2, 1),
+                      mgp = c(2, 0.4, 0), tck = -.01,
                       cex_axis = 0.9, las = 1, mfrow = c(1, 1), ...) {
   par(mar = mar,
       mgp = mgp,
