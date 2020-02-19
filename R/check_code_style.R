@@ -32,7 +32,7 @@ check_python_style = function() {
   msg_start("Checking flake8...check_code_style()")
   if (!fs::file_exists("flake8.ini") && !fs::file_exists("flake8_config_Rmd.ini")) {
     msg_info("Missing flake8_config_Rmd.ini file - creating a default", indent = 2)
-    flake8_ini_sys = "XX"#system.file("", "flake8_config_Rmd.ini", package = "jrNotes", mustWork = TRUE)
+    flake8_ini_sys = system.file("", "flake8_config_Rmd.ini", package = "jrNotes", mustWork = TRUE)
     file.copy(flake8_ini_sys, to = "flake8_config_Rmd.ini", overwrite = TRUE)
   }
   fnames = list.files(pattern = "^c.*Rmd$")
@@ -48,7 +48,7 @@ check_python_style = function() {
 # @import jrNotes
 # @importFrom jrNotes get_repo_language
 check_code_style = function() {
-  language = "jrNotes::get_repo_language()"
+  language = jrNotes::get_repo_language()
   if (language == "python") {
     bad_lints = check_python_style()
   } else {
