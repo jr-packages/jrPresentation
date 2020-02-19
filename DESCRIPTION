@@ -1,7 +1,7 @@
 Type: Package
 Package: jrPresentation
 Title: Jumping Rivers Slide Format
-Version: 0.1.20.9013
+Version: 0.1.20.9014
 Authors@R: 
     person(given = "Jumping",
            family = "Rivers",
@@ -28,7 +28,7 @@ Suggests:
     jrNotes,
     testthat
 Remotes: 
-    gadenbuie/countdown
+    gadenbuie/countdown,
     jr-packages/jrNotes
 Encoding: UTF-8
 LazyData: true
