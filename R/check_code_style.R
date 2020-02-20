@@ -71,4 +71,3 @@ check_code_style = function() {
 #' @importFrom lintr lint
 #' @export
 lint_slides = check_code_style
-

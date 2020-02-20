@@ -19,7 +19,6 @@ check_slides_title = function() {
     msg_error("Different chapters in notes/ and slides/", stop = TRUE)
   }
 
-  chapter = slides_chapters[5]
   for (i in seq_along(slides_chapters)) {
     fname = slides_chapters[i]
     slide_title = readLines(fname)
