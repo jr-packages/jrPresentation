@@ -14,6 +14,10 @@ build_slide = function(fname) {
     return(invisible(NULL))
   }
 
+  if (!fs::file_exists("graphics")) {
+    fs::link_create("../graphics", "graphics", symbolic = TRUE)
+  }
+
   # This is a bit hacky
   # Need to render in the global environment, as S4 classes weren't able to be created
   # However, want to maintain indpendence of chapters
