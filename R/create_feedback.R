@@ -17,5 +17,5 @@ create_feedback = function() {
 #' @export
 include_feedback = function(){
   feedback = system.file("feedback/feedback_stub.Rmd", package = "jrPresentation")
-  knitr::knit_child(feedback, quiet=TRUE, options = list(results = 'asis'))
+  knitr::knit_child(feedback, quiet=TRUE, options = list(results = "asis"))
 }

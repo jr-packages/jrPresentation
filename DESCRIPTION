@@ -26,7 +26,8 @@ Imports:
     xaringan (>= 0.8)
 Suggests:
     jrNotes,
-    testthat
+    testthat,
+    yaml
 Remotes: 
     gadenbuie/countdown,
     jr-packages/jrNotes
