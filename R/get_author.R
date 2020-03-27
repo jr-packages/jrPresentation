@@ -23,7 +23,7 @@ get_author = function(user = NULL) {
   else if (user == "rhian") {
     "Rhian Davies ([\\@trianglegirl](https://twitter.com/trianglegirl))"
   }
-  else if (user = "john")
+  else if (user == "john")
     "John McIntyre"
   else {
     "Jumping Rivers ([\\@jumping_uk](https://twitter.com/jumping_uk))"
