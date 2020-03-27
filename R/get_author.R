@@ -14,7 +14,7 @@ get_author = function(user = NULL) {
   else if (user == "jamie") {
     "Jamie Owen ([\\@jamieRowen](https://twitter.com/jamieRowen))"
   }
-  else if (user == "User") {
+  else if (user == "theo") {
     "Theo Roe ([\\@theoJRivers1](https://twitter.com/theoJRivers1))"
   }
   else if (user == "rmn") {
@@ -23,6 +23,8 @@ get_author = function(user = NULL) {
   else if (user == "rhian") {
     "Rhian Davies ([\\@trianglegirl](https://twitter.com/trianglegirl))"
   }
+  else if (user = "john")
+    "John McIntyre"
   else {
     "Jumping Rivers ([\\@jumping_uk](https://twitter.com/jumping_uk))"
   }
