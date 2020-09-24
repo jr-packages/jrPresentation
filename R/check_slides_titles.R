@@ -1,5 +1,5 @@
 globalVariables("chapter")
-#' @importFrom stringr str_detect str_match str_replace_all str_trim str_replace
+#' @importFrom stringr str_detect str_match str_replace_all str_trim str_remove
 clean_string = function(string) {
   string = str_replace_all(string, '"', "")
   string = str_trim(string)
