@@ -1,5 +1,6 @@
 # Version 0.1.21
   * Change regex pattern to remove labels in `check_slides_titles()`
+  * ALLOWED_NOTES=1 (All declared Imports)
 
 # Dev
   * Create symlink to graphics path
