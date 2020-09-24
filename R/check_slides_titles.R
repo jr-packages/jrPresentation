@@ -29,7 +29,7 @@ check_slides_title = function() {
     notes_title = readLines(file.path("../notes/", fname))
     notes_title = notes_title[str_detect(notes_title, "^# .*")][1]
     notes_title = str_match(notes_title, "^# (.*)")[, 2]
-    notes_title = str_replace(notes_title, pattern = "\\label\\{.*\\}", "") # remove labels
+    notes_title = str_remove(notes_title, pattern = "\\label\\{.*\\}") # remove labels
     notes_title = clean_string(notes_title)
     if (notes_title != slide_title) {
       if (!has_error) msg_error("Slides / notes title differ")
