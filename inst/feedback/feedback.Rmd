@@ -18,7 +18,7 @@ editor_options:
 options(htmltools.dir.version = FALSE)
 library("jrPresentation")
 set_presentation_options()
-knitr::opts_chunk$set(cache=FALSE)
+knitr::opts_chunk$set(cache = FALSE)
 ```
 
 layout: true

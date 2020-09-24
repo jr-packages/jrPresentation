@@ -1,4 +1,7 @@
-# Dev
+# jrPresentation 0.2.0 _2020-09-24_
+  * Change regex pattern to remove labels in `check_slides_titles()`
+  * ALLOWED_NOTES=1 (All declared Imports)
+  * Fix lintr errors
   * Create symlink to graphics path
   * Check that titles in notes and slides match
   * Use make final
