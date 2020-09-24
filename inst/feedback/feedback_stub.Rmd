@@ -4,11 +4,11 @@ If you don't mind, we would love some feedback
 
 ```{r, echo=FALSE}
 questionnaire = NA
-if (fs::file_exists("feedback_link.yaml")){
+if (fs::file_exists("feedback_link.yaml")) {
   ## load the yaml
   conf = yaml::read_yaml("feedback_link.yaml")
   today = Sys.Date()
-  if(today <= conf$validto && today >= conf$validfrom){
+  if (today <= conf$validto && today >= conf$validfrom) {
     questionnaire = conf$url
   }
   # questionnaire = scan('feedback_link.txt',what = character())

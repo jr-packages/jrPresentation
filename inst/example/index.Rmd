@@ -18,7 +18,7 @@ editor_options:
 options(htmltools.dir.version = FALSE)
 library("jrPresentation")
 # Now display page numbers and url to slides
-set_presentation_options(page_numbers = FALSE, 
+set_presentation_options(page_numbers = FALSE,
                          url = "www.jumpingrivers.com/link")
 ```
 
@@ -144,6 +144,6 @@ layout: true
 # Figure scale set in knitr_options.R
 # Can't highlight multiple lines
 library(ggplot2)
-ggplot(cars) + 
-{{  geom_point(aes(speed, dist))}}
+ggplot(cars) +
+  {{  geom_point(aes(speed, dist))}}
 ```
