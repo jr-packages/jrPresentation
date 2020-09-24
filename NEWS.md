@@ -1,3 +1,6 @@
+# Version 0.1.21
+  * Change regex pattern to remove labels in `check_slides_titles()`
+
 # Dev
   * Create symlink to graphics path
   * Check that titles in notes and slides match
