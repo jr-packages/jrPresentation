@@ -1,4 +1,22 @@
 globalVariables("lines")
+
+#'  Build all the slides and create virtualenv needed to do so
+#'
+#' @export
+render = function() {
+  jrNotes:::check_pkgs()
+  jrNotes::provision_venv("slides")
+  build_all()
+}
+
+build_all = function() {
+  slides_chapters = sort(list.files(path = ".", pattern = "^chapter?.\\.Rmd$"))
+
+  for (i in seq_along(slides_chapters)) {
+    build_slide(slides_chapters[i])
+  }
+}
+
 #' Convert RMD to HTML
 #'
 #' If the slides are not runtime shiny, the filename is passed to

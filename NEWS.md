@@ -1,3 +1,7 @@
+# jrPresentation 0.2.1 _2020-12-14_
+  * Introduce `render()` function, a `jrPresentation` equivalent of
+    `jrNotes::render()`.
+
 # jrPresentation 0.2.0 _2020-09-24_
   * Change regex pattern to remove labels in `check_slides_titles()`
   * ALLOWED_NOTES=1 (All declared Imports)
