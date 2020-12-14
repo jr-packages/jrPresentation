@@ -1,7 +1,7 @@
 Type: Package
 Package: jrPresentation
 Title: Jumping Rivers Slide Format
-Version: 0.2.0
+Version: 0.2.1
 Authors@R: 
     person(given = "Jumping",
            family = "Rivers",
