@@ -10,3 +10,12 @@ create_final = function() {
 
   return(invisible(NULL))
 }
+
+#' Performs the checks on python in venv
+#'
+#' Calls a bunch of checks to ensure great slides!
+#' @export
+create_final_python = function() {
+  jrNotes::provision_venv("slides")
+  create_final()
+}
