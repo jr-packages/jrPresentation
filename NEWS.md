@@ -1,3 +1,6 @@
+# jrPresentation 0.2.3 _2020-12-17_
+  * Remove cross-references from labels before slides title check
+
 # jrPresentation 0.2.2 _2020-12-17_
   * Create function `create_final_python()` which ensures that a python
     virtualenv is active for the checks to run.
