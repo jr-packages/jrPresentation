@@ -1,3 +1,7 @@
+# jrPresentation 0.2.2 _2020-12-17_
+  * Create function `create_final_python()` which ensures that a python
+    virtualenv is active for the checks to run.
+
 # jrPresentation 0.2.1 _2020-12-14_
   * Introduce `render()` function, a `jrPresentation` equivalent of
     `jrNotes::render()`.
